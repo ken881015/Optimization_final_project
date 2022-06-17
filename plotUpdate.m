@@ -36,8 +36,11 @@ old = false;
 if isempty(h)
     h = figure('Tag','PlotIterates');
     
-    fobjfcn = @(x,y) log( 1 + 3 * (y - (x.^3 - x)).^2 + (x - 4/3).^2 );
-    fcontour(fobjfcn, [-2.5 2.5], 'LevelStep', 0.3);
+%     fobjfcn = @(x,y) log( 1 + 3 * (y - (x.^3 - x)).^2 + (x - 4/3).^2 );
+%     fcontour(fobjfcn, [-2.5 2.5], 'LevelStep', 0.3);
+
+    fobjfcn = @(x,y) x^2+2*y^2-0.3*cos(3*pi*x)-0.4*cos(4*pi*y)+0.7;
+    fcontour(fobjfcn, [-100 100], 'LevelStep', 0.3);
         
     % Colors to use for multiple plots
     ms.index = 1;
@@ -48,7 +51,7 @@ end
 PlotPoint(x,z)
 
 % -------------------------------------------------------------------------
-% helper function PlotUpdate
+% helper function PlotPoint
 % -------------------------------------------------------------------------
 function PlotPoint(x,z)
 
