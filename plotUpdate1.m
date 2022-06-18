@@ -1,4 +1,5 @@
 function stop = plotUpdate(x, optimValues, state)
+
 % Output function that plots the iterates of the optimization algorithm.
 
 % Copyright 2010-2016, The MathWorks, Inc.
@@ -15,7 +16,6 @@ switch state
     case 'iter'
         if ~(optimValues.iteration == 0)
             % Update contour plot to show current solution
-            disp("Hello~~~")
             PlotPoint(x,optimValues.fval);
         end
     case 'done'
